@@ -38,31 +38,67 @@ const categories = [
         { name: 'Indian', path: '/' },
         { name: 'Asian', path: '/' },
         { name: 'Greek', path: '/' },
-        { name: 'Continental', path: '/' }
-    ]},
-    { name: 'Outdoor Activities', path: '/', subCategories: [
+        { name: 'Continental', path: '/' },
         { name: 'Arabian', path: '/' },
         { name: 'Mexican', path: '/' },
         { name: 'Brazilian', path: '/' },
         { name: 'Buffet Offering', path: '/' },
-        { name: 'African Delicacies', path: '/' }
+        { name: 'African Delicacies', path: '/' },
+        { name: 'Takeout', path: '/' },
+        
     ]},
-    { name: 'Accommodation', path: '/' },
-    { name: 'Beauty & Health', path: '/' },
-    { name: 'Night Life', path: '/' },
-    { name: 'Mobility', path: '/' },
-    { name: 'Luxury Rental', path: '/' },
-    // { name: 'Event ticketing', path: '/' },
-     { name: 'Event ticketing', path: '/', subCategories: [
-        { name: 'Chinese', path: '/' },
-        { name: 'Indian', path: '/' },
-        { name: 'Asian', path: '/' },
-        { name: 'Greek', path: '/' },
-        { name: 'Continental', path: '/' }
+    { name: 'Outdoor Activities', path: '/', subCategories: [
+        { name: 'Hiking & Trekking', path: '/' },
+        { name: 'Camping', path: '/' },
+        { name: 'Beach & Water Sports', path: '/' },
+        { name: 'Wildlife & Safari', path: '/' },
+        { name: 'Cycling & Adventure', path: '/' }
+    ]},
+    { name: 'Accommodation', path: '/', subCategories: [
+        { name: 'Shortlet Apartments', path: '/' },
+        { name: 'Hotels & Lodges', path: '/' },
+        { name: 'Rental Homes', path: '/' },
+        { name: 'Purchase Property', path: '/' },
+        { name: 'Real Estate Agencies', path: '/' }
+    ]},
+    { name: 'Beauty & Health', path: '/', subCategories: [
+        { name: 'Hospitals & Clinics', path: '/' },
+        { name: 'Pharmacies', path: '/' },
+        { name: 'Beauty Salons', path: '/' },
+        { name: 'Spas & Wellness', path: '/' },
+        { name: 'Fitness & Gyms', path: '/' }
+    ] },
+    { name: 'Night Life', path: '/', subCategories: [
+        { name: 'Bars & Lounges', path: '/' },
+        { name: 'Clubs', path: '/' },
+        { name: 'Live Music Venues', path: '/' },
+        { name: 'Karaoke', path: '/' },
+        { name: 'Casinos', path: '/' }
+    ] },
+    { name: 'Mobility', path: '/', subCategories: [
+        { name: 'Car Rentals', path: '/' },
+        { name: 'Ride Hailing & Taxi', path: '/' },
+        { name: 'Public Transport', path: '/' },
+        { name: 'Logistics & Delivery', path: '/' },
+        { name: 'Bike Rentals', path: '/' }
+    ] },
+    { name: 'Luxury Rental', path: '/', subCategories: [
+        { name: 'Luxury Cars', path: '/' },
+        { name: 'Yachts', path: '/' },
+        { name: 'Private Jets', path: '/' },
+        { name: 'Vacation Villas', path: '/' },
+        { name: 'Designer Fashion Rentals', path: '/' }
+    ] },
+    { name: 'Event ticketing', path: '/', subCategories: [
+        { name: 'Concerts & Shows', path: '/' },
+        { name: 'Sports Events', path: '/' },
+        { name: 'Theater & Cinema', path: '/' },
+        { name: 'Festivals & Carnivals', path: '/' },
+        { name: 'Conferences & Seminars', path: '/' }
     ]},
 ];
 
-export default function App() {
+export default function MainHeader() {
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState(categories[0]);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -111,9 +147,9 @@ export default function App() {
         <div className="bg-transparent font-sans antialiased relative z-50">
             {/* Header Section */}
             <header className="bg-transparent px-2 md:px-6 py-4">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
+                <div className="w-[95%] mx-auto flex justify-between items-center">
                     {/* Logo and Mobile Menu Button */}
-                    <div className="w-full md:w-fit flex items-center justify-between space-x-4">
+                    <div className="w-full lg:w-fit flex items-center justify-between space-x-4">
                         <Link to="/" className="flex items-center space-x-2">
                              {/* Replace with your logo component or image */}
                              <img src={mypallogo} alt="MyPal Logo" />
@@ -168,7 +204,7 @@ export default function App() {
                                     </div>
 
                                     {/* Right Column: Sub-categories */}
-                                    <div className="flex-1 bg-white rounded-xl shadow-lg p-4 grid grid-cols-2 lg:grid-cols-3 gap-4 overflow-auto">
+                                    <div className="h-fit flex-1 bg-white rounded-xl shadow-lg p-4 grid grid-cols-2 lg:grid-cols-3 gap-4 overflow-auto">
                                         {activeCategory && activeCategory.subCategories && activeCategory.subCategories.map((sub, index) => (
                                             <Link to={sub.path} key={index} onClick={() => setIsCategoryDropdownOpen(false)} className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                                                 {sub.name}

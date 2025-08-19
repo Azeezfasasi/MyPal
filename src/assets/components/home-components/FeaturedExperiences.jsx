@@ -127,18 +127,18 @@ export default function FeaturedExperiences() {
                 {/* Section header */}
                 <div className="w-full flex flex-row gap-[40px] items-center justify-start relative mb-8">
                 {/* Left Gradient Line */}
-                    <div className="hidden md:block border-t border-solid shrink-0 w-[20%] h-0 relative -mt-px rotate-180"
+                    <div className="hidden md:block border-t border-solid shrink-0 md:w-[15%] lg:w-[20%] h-0 relative -mt-px rotate-180"
                     style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",
                     borderImageSlice: 1,}}
                     ></div>
 
                     {/* Title */}
-                    <div className="text-[#000000] text-center md:text-left font-['DrukCyr-Medium',_sans-serif] text-[28px] md:text-[54px] font-bold relative flex items-center justify-center md:justify-start mx-auto">
+                    <div className="text-[#000000] text-center md:text-left font-['DrukCyr-Medium',_sans-serif] text-[28px] md:text-[34px] lg:text-[54px] font-bold relative flex items-center justify-center md:justify-start mx-auto">
                         Featured Experiences
                     </div>
 
                     {/* Right Gradient Line */}
-                    <div className="hidden md:block border-t border-solid shrink-0 w-[20%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
+                    <div className="hidden md:block border-t border-solid shrink-0 md:w-[15%] lg:w-[20%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
                     ></div>
                 </div>
 

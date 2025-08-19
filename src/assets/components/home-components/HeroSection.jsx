@@ -8,22 +8,22 @@ const heroImage = heroimagedeem;
 
 export default function HeroSection() {
     return (
-        <div className="relative w-full h-[800px]">
+        <div className="relative w-full h-[800px] md:h-[800px]">
             <MainHeader />
             {/* Background Image with Overlay */}
             <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center rounded-b-[20px]"
                 style={{ backgroundImage: `url(${heroImage})` }}
             >
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black opacity-40"></div>
+                <div className="absolute inset-0 bg-black opacity-40 rounded-b-[20px]"></div>
             </div>
 
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 md:px-8">
                 {/* Text Content */}
                 <div className="w-full md:w-[95%] text-left mt-[-40px] md:mt-0 mb-16 flex flex-col items-start">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight tracking-wide drop-shadow-lg text-left font-['DrukCyr-Medium',_sans-serif] font-bold relative">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide drop-shadow-lg text-left font-['DrukCyr-Medium',_sans-serif] font-bold relative">
                         Effortlessly <span className="text-[#DB3A06]">discover</span>, reserve, or book from our <br /> extensive list of <span className="text-[#DB3A06]">hospitality</span> services.
                     </h1>
                 </div>
@@ -37,7 +37,7 @@ export default function HeroSection() {
                             <input
                                 type="search"
                                 placeholder="What are you looking for"
-                                className="w-full text-[#ffffff] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[18px] md:text-[24px] font-medium placeholder-white focus:outline-none"
+                                className="w-full text-[#ffffff] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] sm:text-[16px] md:text-[16px] lg:text-[24px] font-medium placeholder-white focus:outline-none"
                             />
                         </div>
 
@@ -47,7 +47,7 @@ export default function HeroSection() {
                             <input
                                 type="search"
                                 placeholder="Location"
-                                className="w-full text-[#ffffff] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[18px] md:text-[24px] font-medium placeholder-white focus:outline-none"
+                                className="w-full text-[#ffffff] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] sm:text-[16px] md:text-[16px] lg:text-[24px] font-medium placeholder-white focus:outline-none"
                             />
                         </div>
 

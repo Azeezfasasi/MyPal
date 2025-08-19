@@ -31,18 +31,18 @@ export default function ExploreCategory() {
                 {/* Section Title */}
                 <div className="w-full flex flex-row gap-[40px] items-center justify-start relative mb-8">
                 {/* Left Gradient Line */}
-                    <div className="hidden md:block border-t border-solid shrink-0 w-[20%] h-0 relative -mt-px rotate-180"
+                    <div className="hidden md:block border-t border-solid shrink-0 md:w-[15%] lg:w-[20%] h-0 relative -mt-px rotate-180"
                     style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",
                     borderImageSlice: 1,}}
                     ></div>
 
                     {/* Title */}
-                    <div className="text-[#000000] text-center md:text-left font-['DrukCyr-Medium',_sans-serif] text-[28px] md:text-[64px] font-bold relative flex items-center justify-center md:justify-start mx-auto">
+                    <div className="text-[#000000] text-center md:text-left font-['DrukCyr-Medium',_sans-serif] text-[28px] md:text-[34px] lg:text-[54px] font-bold relative flex items-center justify-center md:justify-start mx-auto">
                         Explore By Category
                     </div>
 
                     {/* Right Gradient Line */}
-                    <div className="hidden md:block border-t border-solid shrink-0 w-[20%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
+                    <div className="hidden md:block border-t border-solid shrink-0 md:w-[15%] lg:w-[20%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
                     ></div>
                 </div>
 
@@ -65,12 +65,12 @@ export default function ExploreCategory() {
                             </div>
 
                             {/* Category Name */}
-                            <h3 className="mt-2 font-semibold text-[#000000] text-center font-['AvenirNextRoundedStd-Demi',_sans-serif] text-[24px] md:text-[32px] relative self-stretch">
+                            <h3 className="mt-2 font-semibold text-[#000000] text-center font-['AvenirNextRoundedStd-Demi',_sans-serif] text-[24px] md:text-[24px] lg:text-[32px] relative self-stretch">
                                 {category.name}
                             </h3>
 
                             {/* Venues Count */}
-                            <p className="mt-0 text-[#A42C05] text-foundation-red-dark text-center font-['AvenirNextRoundedStd-Medium',_sans-serif] text-2xl font-medium relative self-stretch underline">
+                            <p className="mt-0 text-[#A42C05] text-foundation-red-dark text-center font-['AvenirNextRoundedStd-Medium',_sans-serif] sm:text-[18px] md:text-[22px] lg:text-2xl font-medium relative self-stretch underline">
                                 {category.venues} Venues
                             </p>
                         </Link>

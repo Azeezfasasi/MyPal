@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
+import minuscircle from '../../images/minuscircle.svg'
+import addcircle from '../../images/addcircle.svg'
 
 const faqData = [
     {
@@ -30,6 +32,13 @@ const faqData = [
         question: 'Is there a cost for businesses to join MyPal?',
         answer: 'No, joining MyPal is free for all businesses. The platform is designed to help them grow their customer base and visibility without any financial barriers.',
     },
+    {
+        question: 'How does MyPal ensure the quality of services listed?',
+        answer: 'Answer will be displayed here.',
+    },{
+        question: 'What should I do if I encounter an issue with a booking?',
+        answer: 'Answer will be displayed here.',
+    },
 ];
 
 export default function Faq() {
@@ -43,22 +52,22 @@ export default function Faq() {
 
     return (
         <div className="bg-white py-12 md:py-20 font-sans antialiased">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section header */}
                 <div className="w-full flex flex-row gap-[40px] items-center justify-start relative mb-8">
                 {/* Left Gradient Line */}
-                    <div className="hidden md:block border-t border-solid shrink-0 w-[20%] h-0 relative -mt-px rotate-180"
+                    <div className="hidden md:block border-t border-solid shrink-0 md:w-[20%] lg:w-[30%] h-0 relative -mt-px rotate-180"
                     style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",
                     borderImageSlice: 1,}}
                     ></div>
 
                     {/* Title */}
-                    <div className="text-[#000000] text-center md:text-left font-['DrukCyr-Medium',_sans-serif] text-[28px] md:text-[54px] font-bold relative flex items-center justify-center md:justify-start mx-auto">
+                    <div className="text-[#000000] text-center md:text-left font-['DrukCyr-Medium',_sans-serif] text-[28px] md:text-[34px] lg:text-[54px] font-bold relative flex items-center justify-center md:justify-start mx-auto">
                         FAQ'S
                     </div>
 
                     {/* Right Gradient Line */}
-                    <div className="hidden md:block border-t border-solid shrink-0 w-[20%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
+                    <div className="hidden md:block border-t border-solid shrink-0 md:w-[20%] lg:w-[30%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
                     ></div>
                 </div>
 
@@ -67,32 +76,32 @@ export default function Faq() {
                     {faqData.map((item, index) => (
                         <div
                             key={index}
-                            className="w-full rounded-2xl p-2 sm:p-2 transition-all duration-300"
+                            className="w-full rounded-2xl p-0 sm:p-2 transition-all duration-300"
                         >
                             <button
                                 onClick={() => toggleAccordion(index)}
                                 className="w-full flex justify-between items-center text-left focus:outline-none"
                             >
-                                <h3 className="text-sm sm:text-lg font-medium text-gray-800">
+                                <div className="w-[80%] text-[#000000] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-2xl font-medium relative cursor-pointer" style={{letterSpacing: '-0.0506em'}}>
                                     {item.question}
-                                </h3>
+                                </div>
                                 {/* Icon for toggling */}
-                                <div className="p-2 rounded-full border border-gray-300">
+                                <div className="">
                                     {openIndex === index ? (
-                                        <Minus className="w-4 h-4 text-orange-600" />
+                                        <img src={minuscircle} alt="" className='cursor-pointer' />
                                     ) : (
-                                        <Plus className="w-4 h-4 text-orange-600" />
+                                        <img src={addcircle} alt="" className='cursor-pointer' />
                                     )}
                                 </div>
                             </button>
                             {/* Answer content, conditionally rendered */}
                             {openIndex === index && (
-                                <p className="mt-4 text-sm text-gray-600 animate-fadeIn">
+                                <p className="mt-4 text-gray-600 animate-fadeIn w-[80%] text-left font-['Poppins-Regular',_sans-serif] text-lg font-normal">
                                     {item.answer}
                                 </p>
                             )}
                             <div
-                            class="border-solid border-[rgba(0,0,0,0.22)] border-t border-r-[0] border-b-[0] border-l-[0] self-stretch shrink-0 h-0 relative mt-[20px]"
+                            className="border-solid border-[rgba(0,0,0,0.22)] border-t border-r-[0] border-b-[0] border-l-[0] self-stretch shrink-0 h-0 relative mt-[15px] md:mt-[20px]"
                             ></div>
                         </div>
                     ))}
