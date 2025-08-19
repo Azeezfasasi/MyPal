@@ -3,6 +3,7 @@ import MainHeader from './assets/components/home-components/MainHeader'
 import HeroSection from './assets/components/home-components/HeroSection'
 import ExploreCategory from './assets/components/home-components/ExploreCategory'
 import FeaturedExperiences from './assets/components/home-components/FeaturedExperiences'
+import Faq from './assets/components/home-components/Faq'
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <HeroSection />
       <ExploreCategory />
       <FeaturedExperiences />
+      <Faq />
     </>
   )
 }
