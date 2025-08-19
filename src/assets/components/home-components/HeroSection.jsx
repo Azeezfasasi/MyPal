@@ -12,7 +12,7 @@ export default function HeroSection() {
             <MainHeader />
             {/* Background Image with Overlay */}
             <div
-                className="absolute bg-cover bg-center rounded-b-[20px]"
+                className="absolute inset-0 bg-cover bg-center rounded-b-[20px]"
                 style={{ backgroundImage: `url(${heroImage})` }}
             >
                 {/* Dark overlay for text readability */}
