@@ -9,6 +9,7 @@ import img5 from '../../images/img5.svg'
 import img6 from '../../images/img6.svg'
 import img7 from '../../images/img7.svg'
 import img8 from '../../images/img8.svg'
+import { Link } from 'react-router-dom';
 
 // Reusable card component for each experience
 const ExperienceCard = ({ imageSrc, title, description, rating, reviews, location }) => {
@@ -16,16 +17,18 @@ const ExperienceCard = ({ imageSrc, title, description, rating, reviews, locatio
         <div className="group bg-white rounded-[16.2px] border border-solid border-gray-300 overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl">
             {/* Image section */}
             <div className="relative overflow-hidden aspect-w-4 aspect-h-3">
-                <img
-                    src={imageSrc}
-                    alt={title}
-                    className="w-full h-full object-cover rounded-t-3xl transition-transform duration-300 group-hover:scale-105"
-                />
+                <Link to="/services/servicedetails">
+                    <img
+                        src={imageSrc}
+                        alt={title}
+                        className="w-full h-full object-cover rounded-t-3xl transition-transform duration-300 group-hover:scale-105"
+                    />
+                </Link>
             </div>
 
             {/* Content section */}
             <div className="p-4 sm:p-6">
-                <h3 className="text-lg font-bold text-gray-800 mb-1">{title}</h3>
+                <Link to="/services/servicedetails" className="text-lg font-bold text-gray-800 mb-1">{title}</Link>
                 <p className="text-[15px] text-gray-500 mb-2">{description}</p>
                 
                 {/* Rating and location */}
@@ -42,11 +45,11 @@ const ExperienceCard = ({ imageSrc, title, description, rating, reviews, locatio
                 </div>
 
                 {/* View Details Button */}
-                <div className="flex justify-center">
-                    <button className="w-full py-2 px-4 rounded-full text-sm transition-colors duration-300 border border-solid border-gray-300 group-hover:bg-orange-600 group-hover:text-white der-orange-600 text-[#000000] text-center font-['AvenirNextRoundedStd-Regular',_sans-serif] text-[14.576732635498047px] font-normal">
+                <Link to="/services/servicedetails" className="flex justify-center">
+                    <button className="w-full py-2 px-4 rounded-full text-sm transition-colors duration-300 border border-solid border-gray-300 group-hover:bg-orange-600 group-hover:text-white der-orange-600 text-[#000000] text-center font-['AvenirNextRoundedStd-Regular',_sans-serif] text-[14.576732635498047px] font-normal cursor-pointer">
                         View Details
                     </button>
-                </div>
+                </Link>
             </div>
         </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react'
-import MainHeader from './assets/components/home-components/MainHeader'
 import HeroSection from './assets/components/home-components/HeroSection'
 import ExploreCategory from './assets/components/home-components/ExploreCategory'
 import FeaturedExperiences from './assets/components/home-components/FeaturedExperiences'
