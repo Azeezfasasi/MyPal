@@ -36,9 +36,6 @@ export default function ServiceDetailDescription() {
                             <button className="w-full sm:w-auto px-4 md:px-8 py-3 md:py-5 rounded-[10px] bg-[#DB3A06] text-white font-semibold shadow-md hover:bg-orange-700 transition-colors duration-200 gap-2.5 cursor-pointer text-[14px] md:text-[16px]">
                                 Download App to Book Service
                             </button>
-                            {/* <button className="w-full sm:w-auto p-3 md:p-5 rounded-[10px] border border-solid border-[#DB3A06] text-[#DB3A06] font-semibold hover:bg-gray-100 transition-colors duration-200 cursor-pointer text-[14px] md:text-[16px]">
-                                Write a Review
-                            </button> */}
                             <div className='flex flex-row items-center space-x-3'>
                                 <button className="p-5 rounded-[10px] border border-solid border-[#DB3A06] text-[#DB3A06] hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
                                 <Heart className="w-5 h-5" />
