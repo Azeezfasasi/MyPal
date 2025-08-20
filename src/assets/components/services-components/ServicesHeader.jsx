@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import mypallogo from '../../images/mypallogo.svg'
 
 // Using inline SVG for the chevron-down icon
@@ -98,13 +98,23 @@ const categories = [
     ]},
 ];
 
+// MainHeader component - Removed default export
 export default function ServicesHeader() {
+    // State for the desktop dropdown menu
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState(categories[0]);
+    
+    // State for the mobile menu panel
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
+    // State for the nested mobile category submenu
+    const [mobileActiveCategory, setMobileActiveCategory] = useState(null);
+
+    // state to control the mobile category list independently
+    const [isMobileCategoryListOpen, setIsMobileCategoryListOpen] = useState(false);
+
     const dropdownRef = useRef(null);
-    const location = useLocation();
+    // const location = useLocation();
     const [activeLink, setActiveLink] = useState('');
 
     useEffect(() => {
@@ -118,7 +128,7 @@ export default function ServicesHeader() {
         }
     }, [location.pathname]);
 
-    // This effect handles closing the dropdown when a click occurs outside of it
+    // This effect handles closing the desktop dropdown when a click occurs outside of it
     useEffect(() => {
         function handleClickOutside(event) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -141,6 +151,21 @@ export default function ServicesHeader() {
     
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
+        // Reset the mobile category state when the main menu closes
+        if (isMobileMenuOpen) {
+            setMobileActiveCategory(null);
+            // FIX: Also reset the mobile category list state when the main menu closes
+            setIsMobileCategoryListOpen(false);
+        }
+    };
+
+    // Helper function to handle mobile category clicks
+    const handleMobileCategoryClick = (category) => {
+        if (mobileActiveCategory?.name === category.name) {
+            setMobileActiveCategory(null); // Collapse if already open
+        } else {
+            setMobileActiveCategory(category); // Expand the new category
+        }
     };
 
     return (
@@ -156,15 +181,15 @@ export default function ServicesHeader() {
                         </Link>
                         
                         {/* Mobile Menu Button */}
-                        <button onClick={toggleMobileMenu} className="lg:hidden p-2 rounded-lg text-white focus:outline-none">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <button onClick={toggleMobileMenu} className="lg:hidden p-2 rounded-lg text-[#DB3A06] focus:outline-none">
+                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                             </svg>
                         </button>
                     </div>
 
                     {/* Desktop Navigation Links */}
-                    <nav className="hidden lg:flex justify-center items-center space-x-8 backdrop-blur-[8.7px] bg-[rgba(255,255,255,0.34)] rounded-[50px] border border-solid border-gray-300 h-[72px] px-1">
+                    <nav className="hidden lg:flex justify-center items-center space-x-8 bg-[rgba(255,255,255,0.34)] rounded-[50px] border border-solid border-gray-300 h-[72px] px-1">
                         {/* Home Link */}
                         <Link
                             to="/"
@@ -174,7 +199,7 @@ export default function ServicesHeader() {
                             Home
                         </Link>
 
-                        {/* Category Dropdown */}
+                        {/* Category Dropdown (Desktop) */}
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={toggleCategoryDropdown}
@@ -184,7 +209,7 @@ export default function ServicesHeader() {
                                 <ChevronDownIcon className={`w-4 h-4 transform transition-transform duration-300 ${isCategoryDropdownOpen ? 'rotate-180' : ''}`} />
                             </button>
 
-                            {/* Dropdown Menu */}
+                            {/* Dropdown Menu (Desktop) */}
                             {isCategoryDropdownOpen && (
                                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-4 p-4 w-[60rem] bg-transparent shadow-2xl rounded-3xl flex flex-row gap-4 animate-fadeIn z-50">
                                     {/* Left Column: Main Categories */}
@@ -226,7 +251,7 @@ export default function ServicesHeader() {
                     </nav>
 
                     {/* Download App Button */}
-                    <button className="hidden lg:block px-6 py-2 bg-orange-600 text-white font-semibold rounded-full hover:bg-orange-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    <button className="hidden lg:block px-6 py-2 bg-[#DB3A06] text-white font-semibold rounded-full hover:bg-orange-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#DB3A06] cursor-pointer">
                         Download App
                     </button>
                 </div>
@@ -234,42 +259,100 @@ export default function ServicesHeader() {
 
             {/* Mobile Menu (outside the header to use fixed positioning) */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 bg-gray-800 bg-opacity-95 z-40 lg:hidden flex flex-col items-center justify-center space-y-8 animate-slideDown">
-                    <button onClick={toggleMobileMenu} className="absolute top-4 right-6 text-white p-2">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                    <Link to="/" onClick={toggleMobileMenu} className="text-2xl font-bold text-white hover:text-orange-400 transition-colors">Home</Link>
-                    
-                    {/* Mobile Category Dropdown */}
-                    <div className="relative w-full text-center">
+            <div className="fixed inset-0 z-40 lg:hidden">
+                {/* Background Overlay */}
+                <div
+                className="absolute inset-0 bg-transparent"
+                onClick={toggleMobileMenu}
+                ></div>
+
+                {/* Sliding Menu Panel */}
+                <div className="absolute top-0 right-0 w-4/5 max-w-sm h-full bg-white shadow-2xl transform transition-transform duration-500 ease-in-out animate-slideIn flex flex-col overflow-y-auto">
+                {/* Close Button */}
+                <button
+                    onClick={toggleMobileMenu}
+                    className="absolute top-5 right-5 text-[#DB3A06] hover:text-red-500 transition"
+                >
+                    <svg
+                    className="w-8 h-8"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                    </svg>
+                </button>
+
+                {/* Menu Items */}
+                <div className="mt-20 px-6 flex flex-col space-y-6">
+                    <Link
+                    to="/"
+                    onClick={toggleMobileMenu}
+                    className="text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
+                    >
+                    Home
+                    </Link>
+
+                    {/* Category Dropdown for Mobile */}
+                    <div className="w-full">
                         <button
-                            onClick={toggleCategoryDropdown}
-                            className="text-2xl font-bold text-white hover:text-orange-400 transition-colors flex items-center justify-center w-full focus:outline-none"
+                            onClick={() => setIsMobileCategoryListOpen(!isMobileCategoryListOpen)}
+                            className="w-full flex justify-between items-center text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
                         >
-                            Category <ChevronDownIcon className={`w-6 h-6 ml-2 transform transition-transform duration-300 ${isCategoryDropdownOpen ? 'rotate-180' : ''}`} />
+                            Category
+                            <ChevronDownIcon
+                                className={`w-6 h-6 ml-2 transform transition-transform duration-300 text-[#DB3A06] ${
+                                    isMobileCategoryListOpen ? "rotate-180" : ""
+                                }`}
+                            />
                         </button>
-                        {isCategoryDropdownOpen && (
-                            <div className="flex flex-col space-y-4 mt-4 text-center">
+
+                        {/* Conditional rendering based on the new state */}
+                        {isMobileCategoryListOpen && (
+                            <div className="mt-4 flex flex-col space-y-4 pl-0">
                                 {categories.map((category) => (
                                     <div key={category.name}>
+                                        {/* Main category link/button */}
                                         {category.subCategories ? (
                                             <button
-                                                onClick={() => setActiveCategory(activeCategory.name === category.name ? null : category)}
-                                                className="text-xl text-gray-300 hover:text-white transition-colors"
+                                                onClick={() => handleMobileCategoryClick(category)}
+                                                className="w-full flex justify-between items-center text-lg font-normal text-gray-600 hover:text-gray-900 transition-colors focus:outline-none"
                                             >
                                                 {category.name}
+                                                <ChevronDownIcon
+                                                    className={`w-4 h-4 transform transition-transform duration-300 text-[#DB3A06] ${
+                                                        mobileActiveCategory?.name === category.name ? "rotate-180" : ""
+                                                    }`}
+                                                />
                                             </button>
                                         ) : (
-                                            <Link to={category.path} onClick={toggleMobileMenu} className="text-xl text-gray-300 hover:text-white transition-colors">
+                                            <Link
+                                                to={category.path}
+                                                onClick={toggleMobileMenu}
+                                                className="block text-lg font-normal text-gray-600 hover:text-gray-900 transition-colors"
+                                            >
                                                 {category.name}
                                             </Link>
                                         )}
-                                        {activeCategory && activeCategory.name === category.name && category.subCategories && (
-                                            <div className="flex flex-col space-y-2 mt-2">
+
+                                        {/* Subcategories */}
+                                        {mobileActiveCategory?.name === category.name &&
+                                            category.subCategories && (
+                                            <div className="mt-2 ml-4 flex flex-col space-y-2 text-sm text-gray-500">
                                                 {category.subCategories.map((sub, index) => (
-                                                    <Link to={sub.path} key={index} onClick={toggleMobileMenu} className="text-lg text-gray-400 hover:text-white transition-colors">{sub.name}</Link>
+                                                    <Link
+                                                        to={sub.path}
+                                                        key={index}
+                                                        onClick={toggleMobileMenu}
+                                                        className="hover:text-gray-800 transition-colors"
+                                                    >
+                                                        {sub.name}
+                                                    </Link>
                                                 ))}
                                             </div>
                                         )}
@@ -279,12 +362,45 @@ export default function ServicesHeader() {
                         )}
                     </div>
                     
-                    <Link to="/for-business" onClick={toggleMobileMenu} className="text-2xl font-bold text-white hover:text-orange-400 transition-colors">For Business</Link>
-                    <button onClick={toggleMobileMenu} className="px-6 py-2 bg-orange-600 text-white font-semibold rounded-full hover:bg-orange-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
-                        Download App
+                    <Link
+                    to="/"
+                    onClick={toggleMobileMenu}
+                    className="text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
+                    >
+                    For Business
+                    </Link>
+
+                    <button
+                    onClick={toggleMobileMenu}
+                    className="mt-6 px-6 py-3 bg-[#DB3A06] text-white font-semibold rounded-full hover:bg-orange-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-orange-700"
+                    >
+                    Download App
                     </button>
                 </div>
+                </div>
+            </div>
             )}
         </div>
     );
 }
+
+// A simple App component to make the example runnable
+// const Home = () => <div className="p-8 text-center text-xl">Home Page</div>;
+// const ForBusiness = () => <div className="p-8 text-center text-xl">For Business Page</div>;
+
+// This is the main component that renders the full application
+// export default function App() {
+//     return (
+//         <BrowserRouter>
+//             <div className="font-sans antialiased text-white bg-gray-900 min-h-screen">
+//                 <MainHeader />
+//                 <Routes>
+//                     <Route path="/" element={<Home />} />
+//                     <Route path="/for-business" element={<ForBusiness />} />
+//                 </Routes>
+//             </div>
+//         </BrowserRouter>
+//     );
+// }
+
+
