@@ -4,12 +4,12 @@ export default function ServiceDetailTitle() {
     return (
         <div className="bg-white py-6 md:py-12 font-sans antialiased">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-8 md:gap-24">
+                <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-3 md:gap-24">
                     {/* The Golden Terrace Title */}
                     <div className="md:w-1/2 flex justify-center md:justify-start">
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#4D1402] font-['DrukCyr-Medium',_sans-serif] tracking-tight text-center md:text-left">
+                        <div className="text-2xl sm:text-5xl lg:text-6xl font-semibold text-[#4D1402] font-['DrukCyr-Medium',_sans-serif] tracking-tight text-center md:text-left">
                             THE GOLDEN TERRACE
-                        </h2>
+                        </div>
                     </div>
 
                     {/* Description Text */}
