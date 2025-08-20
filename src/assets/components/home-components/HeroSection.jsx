@@ -24,7 +24,7 @@ export default function HeroSection() {
                 {/* Text Content */}
                 <div className="w-full md:w-[95%] text-left mt-[-40px] md:mt-0 mb-16 flex flex-col items-start">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide drop-shadow-lg text-left font-['DrukCyr-Medium',_sans-serif] font-bold relative">
-                        Effortlessly <span className="text-[#DB3A06]">discover</span>, reserve, book or order <br />from our extensive list of <span className="text-[#DB3A06]">hospitality</span> services.
+                        Effortlessly <span className="text-[#DB3A06]">discover</span>, reserve, book or order <br className='hidden md:block' />from our extensive list of <span className="text-[#DB3A06]">hospitality</span> services.
                     </h1>
                 </div>
 
