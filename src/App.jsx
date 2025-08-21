@@ -15,6 +15,9 @@ import OutdoorActivities from "./category/OutdoorActivities"
 import ParksRecreation from "./outdooractivities/ParksRecreation"
 import BoatsYatch from "./outdooractivities/BoatsYatch"
 import BeachesResorts from "./outdooractivities/BeachesResorts"
+import Accommodation from "./category/Accommodation"
+import BeautyHealth from "./category/BeautyHealth"
+import NightLife from "./category/NightLife"
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
         <Route path="/outdooractivities/beachesresorts" element={<BeachesResorts />} />
         <Route path="/outdooractivities/parksrecreation" element={<ParksRecreation />} />
         <Route path="/outdooractivities/boatsyatch" element={<BoatsYatch />} />
+        <Route path="/category/accommodation" element={<Accommodation />} />
+        <Route path="/category/BeautyHealth" element={<BeautyHealth />} />
+        <Route path="/category/nightlife" element={<NightLife />} />
       </Routes>
     </>
   )
