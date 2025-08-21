@@ -19,7 +19,7 @@ const FooterSection = () => {
                     <p className="text-[#fbfbfb] font-['AvenirNextRoundedStd-Bold',_sans-serif] text-base mb-6 max-w-xs">
                         Connecting you to the world's finest hospitality experiences through our premium digital platform.
                     </p>
-                    <img src={mypallogo} alt="MyPal Logo" className='w-[100px] md:w-[152px] w-[100px] md:h-[152px]' />
+                    <img src={mypallogo} alt="MyPal Logo" className='w-[100px] md:w-[152px] md:h-[152px]' />
                 </div>
 
                 {/* Column 2: Discover */}

@@ -1,32 +1,39 @@
 import React from 'react';
-import MainHeader from './MainHeader';
-import heroimagedeem from '../../images/heroimagedeem.svg'
 import search from '../../images/search.svg'
 import location from '../../images/location.svg'
+import mobilityheroimg from '../../images/mobilityheroimg.svg'
+import RestaurantHeader from '../restaurant-components/RestaurantHeader';
 
-const heroImage = heroimagedeem;
+const heroImage = mobilityheroimg;
 
-export default function HeroSection() {
+export default function OutdoorHero() {
     return (
-        <div className="relative w-full h-[800px] md:h-[800px]">
-            <MainHeader />
+        <div className="relative w-full h-[800px] md:h-[676px]">
+            <RestaurantHeader />
             {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center rounded-b-[20px]"
                 style={{ backgroundImage: `url(${heroImage})` }}
             >
-                {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black opacity-40 rounded-b-[20px]"></div>
             </div>
 
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 md:px-8">
                 {/* Text Content */}
-                <div className="w-full md:w-[95%] text-left mt-[-40px] md:mt-0 mb-16 flex flex-col items-start">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide drop-shadow-lg text-left font-['DrukCyr-Medium',_sans-serif] font-bold relative">
-                        Effortlessly <span className="text-[#DB3A06]">discover</span>, reserve, book or order from our extensive list of <span className="text-[#DB3A06]">hospitality</span> services.
-                    </h1>
+                <div className="w-full md:w-[95%] flex flex-col gap-4 items-center justify-start relative mt-[-40px] md:mt-[-60px] mb-16">
+                    <div className="bg-[rgba(255,255,255,0.34)] rounded-[50px] border-solid border-[rgba(255,255,255,0.41)] border shrink-0 w-[350px] md:w-[350px] h-[55px] md:h-[33px] relative flex justify-center items-center overflow-hidden" style={{ backdropFilter: "blur(8.7px)" }}>
+                        <div className="text-[#ffffff] text-center font-['AvenirNextRoundedStd-Regular',_sans-serif] text-sm font-normal flex items-center justify-center px-2 md:px-0">
+                        Outdoor Escapes - Breathe. Explore. Experience.
+                        </div>
+                    </div>
+                    <div className="text-[#ffffff] text-center font-['DrukCyr-Medium',_sans-serif] text-[50px] md:text-[80px] font-bold relative self-stretch flex items-center justify-center">
+                        OUTDOOR ACTIVITIES
+                    </div>
+                    <div className="w-full md:w-[70%] text-[#ffffff] text-center font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[17px] md:text-xl font-medium relative self-stretch flex items-center justify-center mx-auto">
+                        Reimagine leisure with curated outdoor experiences that let you soak in the sun, reconnect with nature, and enjoy unforgettable moments from sandy shores to serene cruises and vibrant parks.
+                    </div>
                 </div>
+
 
                 {/* Search Bar Section */}
                 <div className="relative w-full md:w-[95%] md:h-[151px] p-4 md:p-6 rounded-2xl shadow-xl backdrop-blur-md bg-white/20 border border-white/30 flex flex-row justify-center items-center">

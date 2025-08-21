@@ -9,7 +9,7 @@ import mobility from '../../images/mobility.svg';
 
 const categories = [
     { name: 'Restaurants', venues: '200+', icon: restaurant, link: '/category/restaurant' },
-    { name: 'Outdoor Activities', venues: '200+', icon: outdoor, link: '' },
+    { name: 'Outdoor Activities', venues: '200+', icon: outdoor, link: '/category/outdooractivities' },
     { name: 'Accommodation', venues: '200+', icon: accomodation, link: '' },
     { name: 'Beauty & Health', venues: '200+', icon: beauty, link: '' },
     { name: 'Nightlife', venues: '200+', icon: nightlife, link: '' },
