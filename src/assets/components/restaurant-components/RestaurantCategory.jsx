@@ -20,7 +20,7 @@ export default function RestaurantCategory() {
       link: '/restaurant/buffetservices',
     },
     {
-      title: 'LOCAL DELICACIES',
+      title: 'ICONC DELICACIES & DRINKS',
       image: delicaciesimg,
       alt: 'A vibrant disco ball with two cocktail glasses in the foreground.',
       link: '/restaurant/localdelicacies',
