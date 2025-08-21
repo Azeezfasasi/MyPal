@@ -8,7 +8,7 @@ const heroImage = luxuryheroimg;
 
 export default function LuxuryHero() {
     return (
-        <div className="relative w-full h-[800px] md:h-[750px]">
+        <div className="relative w-full h-[800px] md:h-[676px]">
             <RestaurantHeader />
             {/* Background Image with Overlay */}
             <div
@@ -20,7 +20,7 @@ export default function LuxuryHero() {
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 md:px-8">
                 {/* Text Content */}
-                <div className="w-full md:w-[95%] flex flex-col gap-4 items-center justify-start relative mt-[-40px] md:mt-[-60px] mb-16">
+                <div className="w-full md:w-[95%] flex flex-col gap-4 items-center justify-start relative mt-[-120px] md:mt-[-160px] mb-16">
                     <div className="bg-[rgba(255,255,255,0.34)] rounded-[50px] border-solid border-[rgba(255,255,255,0.41)] border shrink-0 w-[260px] h-[33px] relative overflow-hidden" style={{ backdropFilter: "blur(8.7px)" }}>
                         <div className="text-[#ffffff] text-center font-['AvenirNextRoundedStd-Regular',_sans-serif] text-sm font-normal absolute left-1 md:left-3 top-1.5 flex items-center justify-center px-2 md:px-0">
                         Seamless city rides at your fingertips.
