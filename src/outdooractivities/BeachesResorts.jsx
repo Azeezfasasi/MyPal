@@ -1,7 +1,7 @@
 import React from 'react'
 import FooterSection from '../assets/components/home-components/FooterSection'
-import BeachesResortsHero from '../assets/components/outdoor-components/BeachesResortsHero'
-import BeachesLists from '../assets/components/outdoor-components/BeachesLists'
+import BeachesResortsHero from '../assets/components/category-components/outdoor-components/BeachesResortsHero'
+import BeachesLists from '../assets/components/category-components/outdoor-components/BeachesLists'
 
 function BeachesResorts() {
   return (

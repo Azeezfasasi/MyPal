@@ -1,7 +1,7 @@
 import React from 'react'
 import FooterSection from '../assets/components/home-components/FooterSection'
-import BoatYatchHero from '../assets/components/outdoor-components/BoatYatchHero'
-import BoatLists from '../assets/components/outdoor-components/BoatLists'
+import BoatYatchHero from '../assets/components/category-components/outdoor-components/BoatYatchHero'
+import BoatLists from '../assets/components/category-components/outdoor-components/BoatLists'
 
 function BoatsYatch() {
   return (

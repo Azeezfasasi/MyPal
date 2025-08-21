@@ -1,7 +1,7 @@
 import React from 'react'
 import FooterSection from '../assets/components/home-components/FooterSection'
-import LuxuryHero from '../assets/components/mobility-components/LuxuryHero'
-import LuxuryLists from '../assets/components/mobility-components/LuxuryLists'
+import LuxuryHero from '../assets/components/category-components/mobility-components/LuxuryHero'
+import LuxuryLists from '../assets/components/category-components/mobility-components/LuxuryLists'
 
 function LuxuryRides() {
   return (
