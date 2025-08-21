@@ -1,12 +1,4 @@
 import React from 'react';
-import {
-    // Utensils,
-    Tent,
-    Building,
-    HeartHandshake,
-    PartyPopper,
-    Car,
-} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import restaurant from '../../images/restaurant.svg';
 import outdoor from '../../images/outdoor.svg';
@@ -16,7 +8,7 @@ import nightlife from '../../images/nightlife.svg';
 import mobility from '../../images/mobility.svg';
 
 const categories = [
-    { name: 'Restaurants', venues: '200+', icon: restaurant },
+    { name: 'Restaurants', venues: '200+', icon: restaurant, link: '/restaurant' },
     { name: 'Outdoor Activities', venues: '200+', icon: outdoor },
     { name: 'Accommodation', venues: '200+', icon: accomodation },
     { name: 'Beauty & Health', venues: '200+', icon: beauty },
@@ -50,8 +42,9 @@ export default function ExploreCategory() {
                 {/* Categories Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {categories.map((category, index) => (
-                        <Link to="/"
+                        <Link
                             key={index}
+                            to={category.link}
                             className="text-center transition-transform duration-300 hover:scale-105 bg-[#ffffff] rounded-[20px] border-solid border-gray-300 border pt-10 pr-5 pb-10 pl-5 flex flex-col gap-1 items-center justify-center shrink-0 relative overflow-hidden"
                         >
                             {/* Icon */}
