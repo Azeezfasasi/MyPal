@@ -8,12 +8,12 @@ import nightlife from '../../images/nightlife.svg';
 import mobility from '../../images/mobility.svg';
 
 const categories = [
-    { name: 'Restaurants', venues: '200+', icon: restaurant, link: '/restaurant' },
-    { name: 'Outdoor Activities', venues: '200+', icon: outdoor },
-    { name: 'Accommodation', venues: '200+', icon: accomodation },
-    { name: 'Beauty & Health', venues: '200+', icon: beauty },
-    { name: 'Nightlife', venues: '200+', icon: nightlife },
-    { name: 'Mobility', venues: '200+', icon: mobility },
+    { name: 'Restaurants', venues: '200+', icon: restaurant, link: '/category/restaurant' },
+    { name: 'Outdoor Activities', venues: '200+', icon: outdoor, link: '' },
+    { name: 'Accommodation', venues: '200+', icon: accomodation, link: '' },
+    { name: 'Beauty & Health', venues: '200+', icon: beauty, link: '' },
+    { name: 'Nightlife', venues: '200+', icon: nightlife, link: '' },
+    { name: 'Mobility', venues: '200+', icon: mobility, link: '/category/mobility' },
 ];
 
 export default function ExploreCategory() {

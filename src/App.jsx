@@ -2,11 +2,15 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Home from "./Home"
 import ServiceDetails from "./services/ServiceDetails"
-import Restaurant from "./Restaurant"
+import Restaurant from "./category/Restaurant"
 import FineDining from "./restaurant/FineDining"
 import BuffetServices from "./restaurant/BuffetServices"
 import LocalDelicacies from "./restaurant/LocalDelicacies"
 import ScrollToTop from "./assets/components/ScrollToTop"
+import Mobility from "./category/Mobility"
+import InCityRides from "./mobility/InCityRides"
+import LuxuryRides from "./mobility/LuxuryRides"
+import HouseholdLogistics from "./mobility/HouseholdLogistics"
 
 function App() {
   return (
@@ -15,10 +19,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/servicedetails" element={<ServiceDetails />} />
-        <Route path="/restaurant" element={<Restaurant />} />
+        <Route path="/category/restaurant" element={<Restaurant />} />
+        <Route path="/category/mobility" element={<Mobility />} />
         <Route path="/restaurant/finedining" element={<FineDining />} />
         <Route path="/restaurant/buffetservices" element={<BuffetServices />} />
         <Route path="/restaurant/localdelicacies" element={<LocalDelicacies />} />
+        <Route path="/mobility/incityrides" element={<InCityRides />} />
+        <Route path="/mobility/luxuryrides" element={<LuxuryRides/>} />
+        <Route path="/mobility/householdlogistics" element={<HouseholdLogistics />} />
       </Routes>
     </>
   )
