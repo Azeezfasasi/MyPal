@@ -55,7 +55,7 @@ export default function FineDiningFilter() {
           <button
             key={index}
             onClick={() => setActiveCategory(category.name)}
-            className={`flex-shrink-0 flex flex-row items-center justify-center p-2.5 rounded-[20px] border border-solid border-gray-300 cursor-pointer transition-all duration-300 gap-2.5 relative z-10
+            className={`flex-shrink-0 flex flex-row items-center justify-center p-2.5 rounded-[20px] border border-solid border-gray-300 cursor-pointer transition-all duration-300 gap-2.5 relative z-50
               ${activeCategory === category.name
                 ? 'bg-[#DB3A06] text-[#ffffff] border-black'
                 : 'bg-white text-[#000000] border-gray-300 hover:border-[#DB3A06]'
