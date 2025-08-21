@@ -1,8 +1,15 @@
 import React from 'react'
+import FooterSection from '../assets/components/home-components/FooterSection'
+import InCityHero from '../assets/components/mobility-components/InCityHero'
+import InCityLists from '../assets/components/mobility-components/InCityLists'
 
 function HouseholdLogistics() {
   return (
-    <div>HouseholdLigistics</div>
+    <>
+      <InCityHero />
+      <InCityLists />
+      <FooterSection />
+    </>
   )
 }
 
