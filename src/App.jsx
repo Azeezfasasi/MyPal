@@ -6,10 +6,12 @@ import Restaurant from "./Restaurant"
 import FineDining from "./restaurant/FineDining"
 import BuffetServices from "./restaurant/BuffetServices"
 import LocalDelicacies from "./restaurant/LocalDelicacies"
+import ScrollToTop from "./assets/components/ScrollToTop"
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/servicedetails" element={<ServiceDetails />} />
