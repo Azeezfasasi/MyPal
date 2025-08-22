@@ -5,7 +5,7 @@ import buffetimg from '../../../images/buffetimg.svg'
 import delicaciesimg from '../../../images/delicaciesimg.svg'
 import games from '../../../images/games.svg'
 import latenightdining from '../../../images/latenightdining.svg'
-import liveentertainment from '../../../images/liveentertainment.svg'
+// import liveentertainment from '../../../images/liveentertainment.svg'
 import luxury from '../../../images/luxury.svg'
 
 // Main component that contains all the cards
@@ -38,12 +38,6 @@ export default function NightLifeCategory() {
     {
       title: 'LATE NIGHT DINING',
       image: latenightdining,
-      alt: 'A vibrant disco ball with two cocktail glasses in the foreground.',
-      link: '/category/nightlife',
-    },
-    {
-      title: 'LIVE ENTERTAINMENT',
-      image: liveentertainment,
       alt: 'A vibrant disco ball with two cocktail glasses in the foreground.',
       link: '/category/nightlife',
     },
