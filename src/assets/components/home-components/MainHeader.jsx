@@ -34,7 +34,7 @@ const ChevronRightIcon = ({ className }) => (
 
 // Updated categories data with a 'path' for each item
 const categories = [
-    { name: 'Restaurant', path: '/', subCategories: [
+    { name: 'Restaurant', path: '/category/restaurant', subCategories: [
         { name: 'Chinese', path: '/' },
         { name: 'Indian', path: '/' },
         { name: 'Asian', path: '/' },
@@ -48,35 +48,35 @@ const categories = [
         { name: 'Takeout', path: '/' },
         
     ]},
-    { name: 'Outdoor Activities', path: '/', subCategories: [
+    { name: 'Outdoor Activities', path: '/category/outdooractivities', subCategories: [
         { name: 'Hiking & Trekking', path: '/' },
         { name: 'Camping', path: '/' },
         { name: 'Beach & Water Sports', path: '/' },
         { name: 'Wildlife & Safari', path: '/' },
         { name: 'Cycling & Adventure', path: '/' }
     ]},
-    { name: 'Accommodation', path: '/', subCategories: [
+    { name: 'Accommodation', path: '/category/accommodation', subCategories: [
         { name: 'Shortlet Apartments', path: '/' },
         { name: 'Hotels & Lodges', path: '/' },
         { name: 'Rental Homes', path: '/' },
         { name: 'Purchase Property', path: '/' },
         { name: 'Real Estate Agencies', path: '/' }
     ]},
-    { name: 'Beauty & Health', path: '/', subCategories: [
+    { name: 'Beauty & Health', path: '/category/BeautyHealth', subCategories: [
         { name: 'Hospitals & Clinics', path: '/' },
         { name: 'Pharmacies', path: '/' },
         { name: 'Beauty Salons', path: '/' },
         { name: 'Spas & Wellness', path: '/' },
         { name: 'Fitness & Gyms', path: '/' }
     ] },
-    { name: 'Night Life', path: '/', subCategories: [
+    { name: 'Night Life', path: '/category/nightlife', subCategories: [
         { name: 'Bars & Lounges', path: '/' },
         { name: 'Clubs', path: '/' },
         { name: 'Live Music Venues', path: '/' },
         { name: 'Karaoke', path: '/' },
         { name: 'Casinos', path: '/' }
     ] },
-    { name: 'Mobility', path: '/', subCategories: [
+    { name: 'Mobility', path: '/category/mobility', subCategories: [
         { name: 'Car Rentals', path: '/' },
         { name: 'Ride Hailing & Taxi', path: '/' },
         { name: 'Public Transport', path: '/' },
@@ -178,12 +178,12 @@ export default function MainHeader() {
                     <div className="w-full lg:w-fit flex items-center justify-between space-x-4">
                         <Link to="/" className="flex items-center space-x-2">
                              {/* Replace with your logo component or image */}
-                             <img src={mypal2} alt="MyPal Logo" className='w-[100px] h-[74px] rounded-[20px]' />
+                             <img src={mypal2} alt="MyPal Logo" className='w-[130px] h-[74px] rounded-[20px]' />
                         </Link>
                         
                         {/* Mobile Menu Button */}
                         <button onClick={toggleMobileMenu} className="lg:hidden p-2 rounded-lg text-white focus:outline-none">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                             </svg>
                         </button>
@@ -366,7 +366,7 @@ export default function MainHeader() {
                     </div>
                     
                     <Link
-                    to="/for-business"
+                    to="/forbusiness"
                     onClick={toggleMobileMenu}
                     className="text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
                     >

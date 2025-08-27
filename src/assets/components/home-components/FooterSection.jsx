@@ -7,7 +7,8 @@ import instagram from '../../images/instagram.svg'
 import location from '../../images/location.svg'
 import sms from '../../images/sms.svg'
 import people from '../../images/people.svg'
-import mypallogo from '../../images/mypallogo.svg'
+// import mypallogo from '../../images/mypallogo.svg'
+import mypal2 from '../../images/mypal2.jpg'
 
 const FooterSection = () => {
     return (
@@ -19,7 +20,7 @@ const FooterSection = () => {
                     <p className="text-[#fbfbfb] font-['AvenirNextRoundedStd-Bold',_sans-serif] text-base mb-6 max-w-xs">
                         Connecting you to the world's finest hospitality experiences through our premium digital platform.
                     </p>
-                    <img src={mypallogo} alt="MyPal Logo" className='w-[100px] md:w-[152px] md:h-[152px]' />
+                    <img src={mypal2} alt="MyPal Logo" className='w-[150px] h-[74px] rounded-[20px]' />
                 </div>
 
                 {/* Column 2: Discover */}

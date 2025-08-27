@@ -13,7 +13,7 @@ export default function BusinessHeroSection() {
             <BusinessHeaderSection />
             {/* Background Image with Overlay */}
             <img
-                className="rounded-b-[40px] w-full h-[800px] md:h-[861px] absolute left-0 top-0"
+                className="rounded-b-[40px] w-full h-[750px] md:h-[861px] absolute left-0 top-0"
                 style={{
                 background: "linear-gradient(to left, #d9d9d9, #d9d9d9)",
                 objectFit: "cover"
