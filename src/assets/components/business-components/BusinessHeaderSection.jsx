@@ -121,7 +121,7 @@ export default function BusinessHeaderSection() {
         // Set the active link based on the current URL path
         if (location.pathname === '/') {
             setActiveLink('Home');
-        } else if (location.pathname.startsWith('/for-business')) {
+        } else if (location.pathname.startsWith('/forbusiness')) {
             setActiveLink('For Business');
         } else {
             setActiveLink('');
@@ -242,7 +242,7 @@ export default function BusinessHeaderSection() {
                         
                         {/* For Business Link */}
                         <Link
-                            to="/business"
+                            to="/forbusiness"
                             onClick={() => setActiveLink('For Business')}
                             className={`flex items-center justify-start pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-lg font-medium relative transition-colors duration-300 cursor-pointer ${activeLink === 'For Business' ? 'bg-white text-black rounded-[50.45px]' : 'text-[#4D1402]'}`}
                         >

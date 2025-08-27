@@ -18,7 +18,7 @@ import BeachesResorts from "./outdooractivities/BeachesResorts"
 import Accommodation from "./category/Accommodation"
 import BeautyHealth from "./category/BeautyHealth"
 import NightLife from "./category/NightLife"
-import Business from "./Business"
+import Business from "./ForBusiness"
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
         <Route path="/category/accommodation" element={<Accommodation />} />
         <Route path="/category/BeautyHealth" element={<BeautyHealth />} />
         <Route path="/category/nightlife" element={<NightLife />} />
-        <Route path="/business" element={<Business />} />
+        <Route path="/forbusiness" element={<Business />} />
       </Routes>
     </>
   )
