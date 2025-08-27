@@ -363,7 +363,7 @@ export default function ServicesHeader() {
                     </div>
                     
                     <Link
-                    to="/"
+                    to="/forbusiness"
                     onClick={toggleMobileMenu}
                     className="text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
                     >
