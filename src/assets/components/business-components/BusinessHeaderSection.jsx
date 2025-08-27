@@ -250,10 +250,17 @@ export default function BusinessHeaderSection() {
                         </Link>
                     </nav>
 
-                    {/* Download App Button */}
-                    <button className="hidden lg:block px-6 py-2 bg-[#DB3A06] text-white font-semibold rounded-full hover:bg-orange-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#DB3A06] cursor-pointer">
-                        Download App
-                    </button>
+                    {/*CTA Button */}
+                    <div className="hidden lg:flex flex-row gap-[18px] items-center justify-start relative">
+                        <a href="https://business.mypal-inc.com/login" target='_blank' className="text-[#4D1402] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-lg font-medium relative flex items-center justify-start">
+                            Login
+                        </a>
+                        <a href="https://business.mypal-inc.com/signup" target='_blank' className="bg-[#DB3A06] rounded-[40px] p-5 flex flex-row gap-2.5 items-center justify-center shrink-0 relative">
+                            <div className="text-[#FBEBE6] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-lg font-medium relative flex items-center justify-start">
+                            Sign Up
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </header>
 
