@@ -4,6 +4,7 @@ import bussnew from '../../images/bussnew.svg'
 import floatingright from '../../images/floatingright.svg'
 import businessheroleft from '../../images/businessheroleft.svg'
 import BusinessHeaderSection from './BusinessHeaderSection';
+import { Link } from 'react-router-dom';
 
 // const heroImage = bussnew;
 
@@ -67,9 +68,9 @@ export default function BusinessHeroSection() {
                         </div>
                     </div>
 
-                    <button className="w-full md:w-[40%] lg:w-[20%] px-10 py-3 md:py-4 bg-[#DB3A06] hover:bg-orange-700 text-white font-semibold rounded-[10px] transition-colors duration-300 shadow-lg cursor-pointer text-2xl font-medium mt-6">
+                    <a href='https://business.mypal-inc.com/signup' target='_blank' className="w-full md:w-[40%] lg:w-[20%] px-10 py-3 md:py-4 bg-[#DB3A06] hover:bg-orange-700 text-white font-semibold rounded-[10px] transition-colors duration-300 shadow-lg cursor-pointer text-2xl font-medium mt-6">
                         Get Started
-                    </button>
+                    </a>
                 </div>
 
             </div>
