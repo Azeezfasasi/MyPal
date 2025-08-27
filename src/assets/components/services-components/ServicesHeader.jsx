@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import mypallogo from '../../images/mypallogo.svg'
 
-// Using inline SVG for the chevron-down icon
+// Using inline SVG for the chevron-down icon.
 const ChevronDownIcon = ({ className }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
