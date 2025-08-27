@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import mypaltrans2 from '../../images/mypaltrans2.png';
+import mypal2 from '../../images/mypal2.jpg'
 
-// Using inline SVG for the chevron-down icon.
+// Using inline SVG for the chevron-down icon
 const ChevronDownIcon = ({ className }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ const categories = [
 ];
 
 // MainHeader component - Removed default export
-export default function ServicesHeader() {
+export default function BusinessHeaderSection() {
     // State for the desktop dropdown menu
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState(categories[0]);
@@ -177,24 +177,24 @@ export default function ServicesHeader() {
                     <div className="w-full lg:w-fit flex items-center justify-between space-x-4">
                         <Link to="/" className="flex items-center space-x-2">
                              {/* Replace with your logo component or image */}
-                             <img src={mypaltrans2} alt="MyPal Logo" className='w-[100px] h-[74px] rounded-[20px]' />
+                             <img src={mypal2} alt="MyPal Logo" className='w-[100px] h-[74px] rounded-[20px]' />
                         </Link>
                         
                         {/* Mobile Menu Button */}
-                        <button onClick={toggleMobileMenu} className="lg:hidden p-2 rounded-lg text-[#DB3A06] focus:outline-none">
-                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <button onClick={toggleMobileMenu} className="lg:hidden p-2 rounded-lg text-white focus:outline-none">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                             </svg>
                         </button>
                     </div>
 
                     {/* Desktop Navigation Links */}
-                    <nav className="hidden lg:flex justify-center items-center space-x-8 bg-[rgba(255,255,255,0.34)] rounded-[50px] border border-solid border-gray-300 h-[72px] px-1">
+                    <nav className="hidden lg:flex justify-center items-center space-x-8 backdrop-blur-[8.7px] bg-[rgba(255,255,255,0.34)] rounded-[50px] border border-solid border-[rgba(255,255,255,0.41)] h-[72px] px-1">
                         {/* Home Link */}
                         <Link
                             to="/"
                             onClick={() => setActiveLink('Home')}
-                            className={`flex items-center justify-center pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] gap-[12.61px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[18.92px] font-medium relative transition-colors duration-300 cursor-pointer ${activeLink === 'Home' ? 'bg-white text-black rounded-[50.45px]' : 'text-black'}`}
+                            className={`flex items-center justify-center pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] gap-[12.61px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[18.92px] font-medium relative transition-colors duration-300 cursor-pointer ${activeLink === 'Home' ? 'bg-white text-[#4D1402] rounded-[50.45px]' : 'text-[#4D1402]'}`}
                         >
                             Home
                         </Link>
@@ -203,7 +203,7 @@ export default function ServicesHeader() {
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={toggleCategoryDropdown}
-                                className={`flex items-center justify-center space-x-2 pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[18.92px] font-medium relative transition-colors duration-300 cursor-pointer ${isCategoryDropdownOpen ? 'bg-white text-black rounded-[50.45px]' : 'text-black'}`}
+                                className={`flex items-center justify-center space-x-2 pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-[18.92px] font-medium relative transition-colors duration-300 cursor-pointer ${isCategoryDropdownOpen ? 'bg-white text-[#4D1402] rounded-[50.45px]' : 'text-[#4D1402]'}`}
                             >
                                 <span>Category</span>
                                 <ChevronDownIcon className={`w-4 h-4 transform transition-transform duration-300 ${isCategoryDropdownOpen ? 'rotate-180' : ''}`} />
@@ -242,9 +242,9 @@ export default function ServicesHeader() {
                         
                         {/* For Business Link */}
                         <Link
-                            to="/"
+                            to="/business"
                             onClick={() => setActiveLink('For Business')}
-                            className={`flex items-center justify-start pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-lg font-medium relative transition-colors duration-300 cursor-pointer ${activeLink === 'For Business' ? 'bg-white text-black rounded-[50.45px]' : 'text-black'}`}
+                            className={`flex items-center justify-start pt-[18.92px] pr-[25.23px] pb-[18.92px] pl-[25.23px] text-left font-['AvenirNextRoundedStd-Medium',_sans-serif] text-lg font-medium relative transition-colors duration-300 cursor-pointer ${activeLink === 'For Business' ? 'bg-white text-black rounded-[50.45px]' : 'text-[#4D1402]'}`}
                         >
                             For Business
                         </Link>
@@ -301,18 +301,20 @@ export default function ServicesHeader() {
                     {/* Category Dropdown for Mobile */}
                     <div className="w-full">
                         <button
+                            // FIX: Use the new state and toggle function for the mobile category list
                             onClick={() => setIsMobileCategoryListOpen(!isMobileCategoryListOpen)}
                             className="w-full flex justify-between items-center text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
                         >
                             Category
                             <ChevronDownIcon
-                                className={`w-6 h-6 ml-2 transform transition-transform duration-300 text-[#DB3A06] ${
+                                // FIX: Use the new state to control the icon's rotation
+                                className={`w-6 h-6 ml-2 transform transition-transform duration-300 ${
                                     isMobileCategoryListOpen ? "rotate-180" : ""
                                 }`}
                             />
                         </button>
 
-                        {/* Conditional rendering based on the new state */}
+                        {/* FIX: Conditional rendering based on the new state */}
                         {isMobileCategoryListOpen && (
                             <div className="mt-4 flex flex-col space-y-4 pl-0">
                                 {categories.map((category) => (
@@ -325,7 +327,7 @@ export default function ServicesHeader() {
                                             >
                                                 {category.name}
                                                 <ChevronDownIcon
-                                                    className={`w-4 h-4 transform transition-transform duration-300 text-[#DB3A06] ${
+                                                    className={`w-4 h-4 transform transition-transform duration-300 ${
                                                         mobileActiveCategory?.name === category.name ? "rotate-180" : ""
                                                     }`}
                                                 />
@@ -363,7 +365,7 @@ export default function ServicesHeader() {
                     </div>
                     
                     <Link
-                    to="/"
+                    to="/for-business"
                     onClick={toggleMobileMenu}
                     className="text-2xl font-semibold text-gray-800 hover:text-[#DB3A06] transition-colors"
                     >
@@ -383,24 +385,3 @@ export default function ServicesHeader() {
         </div>
     );
 }
-
-// A simple App component to make the example runnable
-// const Home = () => <div className="p-8 text-center text-xl">Home Page</div>;
-// const ForBusiness = () => <div className="p-8 text-center text-xl">For Business Page</div>;
-
-// This is the main component that renders the full application
-// export default function App() {
-//     return (
-//         <BrowserRouter>
-//             <div className="font-sans antialiased text-white bg-gray-900 min-h-screen">
-//                 <MainHeader />
-//                 <Routes>
-//                     <Route path="/" element={<Home />} />
-//                     <Route path="/for-business" element={<ForBusiness />} />
-//                 </Routes>
-//             </div>
-//         </BrowserRouter>
-//     );
-// }
-
-
