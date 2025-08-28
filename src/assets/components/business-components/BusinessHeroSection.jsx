@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 export default function BusinessHeroSection() {
     return (
-        <div className="relative w-full h-[800px] md:h-[861px] relative">
+        <div className="relative w-full h-[800px] md:h-[861px]">
             <BusinessHeaderSection />
             {/* Background Image with Overlay */}
             <img
