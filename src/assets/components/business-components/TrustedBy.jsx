@@ -8,9 +8,9 @@ import business from '../../images/business.svg';
 
 const TrustedBy = () => {
   return (
-    <div className="w-full bg-white md:py-16 px-4 md:px-8 flex flex-col items-center justify-center">
+    <div className="w-full bg-white md:py-0 px-4 md:px-8 flex flex-col items-center justify-center">
       {/* Title */}
-      <h2 className="text-xl sm:text-[25px] text-center font-light text-gray-500 font-normal mb-12 sm:mb-20">
+      <h2 className="text-xl sm:text-[25px] text-center text-gray-500 font-normal mb-12 sm:mb-20">
         Trusted by people using this companies
       </h2>
 

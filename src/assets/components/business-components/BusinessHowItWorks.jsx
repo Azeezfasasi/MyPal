@@ -25,7 +25,7 @@ function BusinessHowItWorks() {
         </div>
 
         {/* laptop image */}
-        <div className='hidden md:block w-full'>
+        <div className='hidden w-full md:flex justify-center'>
           <img src={howitworks} alt="How it works" />
         </div>
 
