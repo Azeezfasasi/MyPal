@@ -39,7 +39,7 @@ const BusinessBlog = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-0 lg:py-2 px-0 md:px-0 flex flex-col items-center">
+    <div className="w-full bg-white py-0 lg:py-2 px-0 md:px-0 flex flex-col items-center mb-8">
         {/* Section Title */}
         <div className="w-[90%] flex flex-row gap-[40px] items-center justify-start relative mt-0 mb-10 mx-auto">
             {/* Left Gradient Line */}

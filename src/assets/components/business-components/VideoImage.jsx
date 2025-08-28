@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import videoimage from '../../images/videoimage.svg'
 import videoplay from '../../images/videoplay.svg'
+import businessvideo from '../../videos/businessvideo.mp4'
 
 const VideoImage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
     // The URL of the video to be played.
-  const videoUrl = "https://www.w3schools.com/html/mov_bbb.mp4";
+  const videoUrl = businessvideo;
   
   // The URL of the thumbnail image.
   const thumbnailUrl = videoimage;

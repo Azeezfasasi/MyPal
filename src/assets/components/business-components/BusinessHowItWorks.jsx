@@ -1,5 +1,6 @@
 import React from 'react'
 import howitworks from '../../images/howitworks.png'
+import howimage from '../../images/howimage.svg'
 
 function BusinessHowItWorks() {
   return (
@@ -22,7 +23,16 @@ function BusinessHowItWorks() {
             <div className="hidden md:block border-t border-solid shrink-0 md:w-[15%] lg:w-[20%] h-0 relative -mt-px" style={{borderImage: "linear-gradient(90deg, rgba(94,94,94,1) 0%, rgba(102,102,102,0.14) 100%)",borderImageSlice: 1,}}
             ></div>
         </div>
-        <img src={howitworks} alt="How it works" />
+
+        {/* laptop image */}
+        <div className='hidden md:block w-full'>
+          <img src={howitworks} alt="How it works" />
+        </div>
+
+        {/* Mobile image */}
+        <div className='block md:hidden w-full mt-6 mb-4'>
+          <img src={howimage} alt="How it works" />
+        </div>
     </div>
     </>
   )

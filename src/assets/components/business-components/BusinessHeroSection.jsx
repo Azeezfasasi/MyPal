@@ -68,7 +68,7 @@ export default function BusinessHeroSection() {
                         </div>
                     </div>
 
-                    <a href='https://business.mypal-inc.com/signup' target='_blank' className="w-full md:w-[40%] lg:w-[20%] px-10 py-3 md:py-4 bg-[#DB3A06] hover:bg-orange-700 text-white font-semibold rounded-[10px] transition-colors duration-300 shadow-lg cursor-pointer text-2xl font-medium mt-6">
+                    <a href='https://business.mypal-inc.com/signup' target='_blank' className="w-full flex flex-row justify-center items-center md:w-[40%] lg:w-[20%] px-10 py-3 md:py-4 bg-[#DB3A06] hover:bg-orange-700 text-white rounded-[10px] transition-colors duration-300 shadow-lg cursor-pointer text-2xl font-medium mt-6">
                         Get Started
                     </a>
                 </div>
