@@ -14,7 +14,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const FooterSection = () => {
     const [showContactModal, setShowContactModal] = useState(false);
-    const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+    const [form, setForm] = useState({ name: '', email: '', message: '' });
     const [errors, setErrors] = useState({});
     const [submitting, setSubmitting] = useState(false);
     const [successMsg, setSuccessMsg] = useState('');
@@ -157,7 +157,7 @@ const FooterSection = () => {
                                 />
                                 {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
 
-                                <label className="block text-sm font-medium text-gray-700 mt-4">Phone (optional)</label>
+                                {/* <label className="block text-sm font-medium text-gray-700 mt-4">Phone (optional)</label>
                                 <input
                                     type="tel"
                                     value={form.phone}
@@ -165,7 +165,7 @@ const FooterSection = () => {
                                     className={`mt-1 block w-full rounded-md border py-2 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-gray-800 ${errors.phone ? 'border-red-500' : 'border-gray-200'}`}
                                     placeholder="e.g. +2349055557535"
                                 />
-                                {errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone}</p>}
+                                {errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone}</p>} */}
 
                                 
                             </div>

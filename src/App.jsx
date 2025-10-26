@@ -100,7 +100,7 @@ function App() {
         <Route path="/nightlife/eventsnights" element={<EventNights />} />
         <Route path="/forbusiness" element={<Business />} />
         <Route path="/category/event-ticketing" element={<EventTicketing />} />
-  {/* <Route path="/category/:segmentSlug/:subcategorySlug" element={<BusinessListBySlug />} /> */}
+        {/* <Route path="/category/:segmentSlug/:subcategorySlug" element={<BusinessListBySlug />} /> */}
         <Route path="/restaurant/concerts&shows" element={<ConcertAndShows />} />
         <Route path="/restaurant/privatecinemas" element={<PrivateCinemal />} />
         <Route path="/restaurant/festivals&corporatepromotions" element={<FestivalAndCorporatePromotion />} />
